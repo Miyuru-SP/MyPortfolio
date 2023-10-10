@@ -2,61 +2,41 @@
 
 :root{
     /* ===========Main theme colors==========*/
-    --firstColor:#0e2431;
-    --secondColor:#6a59d1;
-    --thirdColor:#777;
+    --firstColor:#fff;
+    --secondColor:#F0A500;
+    --thirdColor:#a9afc3;
+    --fothColor:#000000;
 
     /* ===========Hover colors==========*/
-    --hoverColor:#614fd0;
+    --hoverColor:#ffbf00;
     
     /* ===========Background colors==========*/
-    --bodyBgColor:#fefefe;
-    --cardBgColor:#fff;
-    --modalBgColor:#fff;
-    --bgTransparentColor:rgba(0,0,0,0.1);
-    --transparentColor01:rgba(0,0,0,0.1);
-    --transparentColor02:rgba(106,89,209,0.1);
-    --lineColor:#d7d7d7;    
+    --bodyBgColor:#1B1A17;
+    --cardBgColor:#23201eca;
+    --modalBgColor:#3b3b3b;
+    --bgTransparentColor:rgba(20, 19, 19, 0.326);
+    --transparentColor01:rgba(255,255,255,0.1);
+    --lineColor:#ffbf00;    
+   
 
     /* ===========color filter==========*/
     --colorFilter: invert(1);
     
     /* ===========Box shadow==========*/
-    --boxShadow: 0px 0px 20px rgb(0 0 0 /10%);
+    --boxShadow: 0px 0px 6px rgba(255, 196, 0, 0.1);
 
     /* ===========Font size==========*/
     --smallFontSize:0.9em;
     --normalFontSize:1em;
 
     /* ===========Scroll bar colors==========*/
-    --scrollBarColor:#c3cadf;
-    --scrollThumColor:#70768a;
-    --scrollThumbHoverColor:#454f6b;
-
-
-}
-.dark-theme{
-    /* ===========Main theme colors==========*/
-    --firstColor:#fff;
-    --secondColor:#6a59d1;
-    --thirdColor:#a9afc3;
-    
-    /* ===========Background colors==========*/
-    --bodyBgColor:#0e1b31;
-    --cardBgColor:#132347;
-    --modalBgColor:#102048;
-    --bgTransparentColor:rgba(255,255,255,0.1);
-    --transparentColor01:rgba(255,255,255,0.1);
-    --lineColor:#454f6b;    
-
-    /* ===========color filter==========*/
-    --colorFilter: invert(0);
-    
-    /* ===========Scroll bar colors==========*/
     --scrollBarColor:#c1ceff;
     --scrollThumColor:#282f4e;
     --scrollThumbHoverColor:#454f6b;
+
+
 }
+
 
 *{
     margin: 0;
@@ -227,7 +207,7 @@ header.sticky .nav-bar{
 
 .btn {
     background: var(--secondColor);
-    color: #fff;
+    color: #000000;
     font-size: var(--normalFontSize);
     font-weight: 500;
     display: inline-block;
@@ -245,9 +225,9 @@ header.sticky .nav-bar{
     position: relative;
 }
 
-.home-container .home-img img {
+.home-container .home-img img {    
     width: 100%;
-    transform: translate(0, 0);
+    transform: translate(0, 0);    
 }
 
 .home .scroll-down {
@@ -379,6 +359,7 @@ header.sticky .nav-bar{
 .about-info .professional-list .list-item h3{
     font-size: 2.5em;
     font-weight: 700;
+    color: var(--secondColor);
 }
 
 .about-info .professional-list .list-item span{
@@ -399,8 +380,12 @@ header.sticky .nav-bar{
 .skills-description h3{
     font-size: 2em;
     margin-bottom: 5px;
+    color: var(--firstColor);
 }
 
+.skills-description p{    
+    color: var(--thirdColor);
+}
 .skills-info{
     max-width: 100%;
     display: grid;
@@ -415,9 +400,9 @@ header.sticky .nav-bar{
 
 .skills-info h4 label{
     background:var(--secondColor);
-    color: #fff;
+    color: #000000;
     font-size: var(--normalFontSize);
-    font-weight: 400;
+    font-weight: 600;
     padding: 5px 15px;
     border-radius: 5px;
 }
@@ -439,6 +424,7 @@ header.sticky .nav-bar{
 .edu-list .item .year{
     font-size: var(--smallFontSize);
     margin-bottom: 5px;
+    font-weight: bold;
 }
 
 .edu-list .item p{
@@ -558,119 +544,7 @@ header.sticky .nav-bar{
     transform: scale(1.03);
 }
 
-/* ===========Services section==========*/
-.services .container .content{
-    width: 100%;
-}
 
-.services-description h3{
-    font-size: 2em;
-    margin-bottom: 50px;
-}
-
-.service-list{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
-    max-width: 100%;
-    margin: 0 auto;
-    gap: 20px;
-}
-
-.service-card{
-    background: var(--cardBgColor);
-    border-bottom: 3px solid var(--secondColor);
-    padding: 50px;
-    border-radius: 6px;
-    box-shadow: var(--boxShadow);
-}
-
-.service-card > i{
-    color: var(--secondColor);
-    font-size: 3em;
-    margin-bottom: 30px;
-}
-
-.service-card h3{
-    font-size: 1.5em;
-    font-weight: 700;
-    line-height: 30px;
-    margin-bottom: 20px;
-}
-
-.service-card .learn-more-btn{
-    color: var(--thirdColor);
-    cursor: pointer;
-    transition: .3s ease;
-}
-
-.service-card .learn-more-btn i{
-    transition: .3s ease;
-}
-
-.service-card:hover .learn-more-btn i{
-    transform: translateX(10px);
-}
-
-.service-modal{
-    z-index: 999999;
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    background: var(--bgTransparentColor);
-    backdrop-filter: blur(10px);
-    visibility: hidden;
-    opacity: 0;
-    transition: .3 ease;
-}
-
-.service-modal.active{
-    visibility: visible;
-    opacity: 1;
-}
-
-.service-modal-body{
-    position: relative;
-    background: var(--modalBgColor);
-    max-width: 600px;
-    margin: 20px;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: var(--boxShadow);
-    transform: translateY(-50px);
-    transition: .5s ease;
-}
-
-.service-modal.active .service-modal-body{
-    transform: translateY(0);
-}
-
-.service-modal-body .modal-close-btn{
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 20px;
-    cursor: pointer;
-}
-
-.service-modal-body h3{
-    font-size: 2em;
-}
-
-.service-modal-body h4{
-    font-size: 1.3em;
-    font-weight: 600;
-    margin: 15px 0 10px;
-}
-
-.service-modal-body ul li{
-    margin-top: 15px;
-}
-
-.service-modal-body ul li i{
-    color: var(--secondColor);
-}
 
 /* ===========portfolio section==========*/
 .portfolio .container .content{
@@ -757,16 +631,26 @@ header.sticky .nav-bar{
     opacity: 1;
 }
 
-.portfolio-model-body{
+.portfolio-model-body {
     position: relative;
     background: var(--modalBgColor);
     max-width: 600px;
-    margin: 20px;
+    margin: 20px auto; /* Center horizontally by setting margin to auto */
     padding: 40px;
+    align-content: center;
     border-radius: 10px;
     box-shadow: var(--boxShadow);
     transform: translateY(-50px);
     transition: .5s ease;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack contents vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+}
+
+.portfolio-model-body img{
+    max-width: 400px;    
+    
 }
 
 .portfolio-model.active .portfolio-model-body{
@@ -829,39 +713,11 @@ header.sticky .nav-bar{
 .contact-card .title h2{
     font-size: 4.2em;
     font-weight: 700;
-    background: linear-gradient(to top, transparent 0%, var(--firstColor) 30%);
+    background: linear-gradient(to top, transparent 0%, var(--secondColor) 30%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     opacity: .9;
 }
-
-/*=======Our Clients=======*/
-
-.swiper {
-    width: 100%;
-    height: 100%;
-  }
-
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .swiper {
-    margin-left: auto;
-    margin-right: auto;
-  }
 
 /*=======Contact section=======*/
 .contact .container .content{
@@ -887,7 +743,7 @@ header.sticky .nav-bar{
 }
 
 .contact-list li h3 i{
-    color: var(--thirdColor);
+    color: var(--secondColor);
     font-size: 1.3em;
     margin-left: 10px;
 }
@@ -913,13 +769,15 @@ header.sticky .nav-bar{
 }
 
 .contact-form input, .contact-form textarea{
-    border: none;
+    border: 1;
     color: var(--firstColor);
     background: var(--transparentColor02);
     font-size: var(--normalFontSize);
     margin-bottom: 20px;
     padding: 15px 40px 40px 20px;
     border-radius: 5px;
+    border-color: var(--secondColor);
+    
 }
 
 .contact-form textarea{
@@ -927,8 +785,14 @@ header.sticky .nav-bar{
     resize: none;
 }
 
+.contact-form textarea:focus {
+    border-color: red;
+}
+
 ::placeholder{
+    border: 1;
     color: var(--firstColor);
+    border-color: var(--hoverColor);
 }
 
 .contact-form .first-row .input{
@@ -962,11 +826,11 @@ footer{
     width: 100%;
     margin-top: 50px;
     padding: 3rem 2rem;
-    color: #fff;
+    color: #000000;
 }
 
 footer a{
-    color: #fff;
+    color: #000000;
 }
 
 .footer-container{
@@ -979,7 +843,7 @@ footer a{
 .footer-container .about h2{
     font-size: 3em;
     font-weight: 600;
-    background: linear-gradient(to top, transparent 0%, #fff 50%);
+    background: linear-gradient(to top, transparent 0%, #000000 50%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     opacity: .8;
@@ -987,7 +851,7 @@ footer a{
 
 .footer-container .about p{
     font-size: var(--normalFontSize);
-    font-weight: 300;
+    font-weight: 600;
     margin-bottom: 30px;
 }
 
@@ -1009,6 +873,13 @@ footer a{
 
 .footer-container .info a{
     margin: 20px;
+    font-weight: 500;
+
+}
+
+.footer-container .info a:hover{
+    margin: 20px;
+    font-weight: bold;
 }
 
 .footer-container .follow a{
@@ -1020,6 +891,7 @@ footer a{
     font-size: var(--normalFontSize);
     font-weight: 300;
     margin-top: 50px;
+    font-weight: bold;
 }
 
 /*=======Media query max-width 1070px=======*/
