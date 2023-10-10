@@ -139,6 +139,17 @@ navItem.forEach((navItem) => {
     });
 });
 
+//typing text
+var typed = new typed('home-text-repeat', {
+    strings: ['A Web Developer!', 'Software Engineer!'],
+    typeSpeed: 50,
+    loop: true,
+    hideCursor: true,
+      onComplete: function() {
+    typed.cursor.remove();
+    
+  }
+  });
 //Scroll reveal animations
 //Common reveal options to create reveal animations
 
